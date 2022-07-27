@@ -118,9 +118,9 @@ impl Pager {
 }
 
 fn main() -> Result<()> {
+    let mut pager = Pager::new()?;
     let stdin = stdin();
     let mut stdout = stdout().into_raw_mode()?;
-    let mut pager = Pager::new()?;
 
     pager.run(stdin, &mut stdout)?;
 
